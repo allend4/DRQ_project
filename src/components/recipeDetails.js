@@ -26,14 +26,17 @@ export class RecipeDetails extends React.Component {
         return (
             <div>
                 {/* bootstrap card */}
-                <Card>
+                <Card className="card bg-light mb-3"> 
                     <Card.Header>{this.props.recipe.rName}</Card.Header> {/* props how you pass data from one comp to another */}
                     <Card.Body>
                         <blockquote className="blockquote mb-0">
-                            <img src={this.props.recipe.rImage} width="200" height="300" alt=" "></img>
-                            <footer className="blockquote-footer">
-                                {this.props.recipe.rIngredients}
-                            </footer>
+                            <img src={this.props.recipe.rImage} width="640" height="360" alt="food"></img>
+                            <ul className="list-group list-group-flush">
+                                <h5 class="card-title">Ingredients</h5>
+                                <li className="list-group-item">{this.props.recipe.rIngredients}</li>
+                                <h5 class="card-title">Instructions</h5>
+                                <li className="list-group-item">{this.props.recipe.rInstructions}</li>
+                            </ul>
                         </blockquote>
                         <Button variant="danger" onClick={this.DeleteRecipe}>Delete</Button> 
                         <Link to={"/edit/" + this.props.recipe._id} className="btn btn-primary" > Edit </Link> 

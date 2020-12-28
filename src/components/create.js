@@ -9,11 +9,13 @@ export class Create extends React.Component{
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeRecipeName = this.onChangeRecipeName.bind(this); // bind when called, has this keyword set to the provided value
         this.onChangeRecipeIngredients = this.onChangeRecipeIngredients.bind(this); // bind when called, has this keyword set to the provided value
+        this.onChangeRecipeInstructions = this.onChangeRecipeInstructions.bind(this); // bind when called, has this keyword set to the provided value
         this.onChangeRecipeImage = this.onChangeRecipeImage.bind(this); // bind when called, has this keyword set to the provided value
 
         this.state = { // store property values that belongs to the component
             rName:'',
             rIngredients:'',
+            rInstructions:'',
             rImage:''
         }
     }// END constructor
@@ -26,19 +28,25 @@ export class Create extends React.Component{
         this.setState({rIngredients: e.target.value}); //update method and invoke state
     }// END onChangeRecipeIngredients
 
+    onChangeRecipeInstructions(e){
+        this.setState({rInstructions: e.target.value}); //update method and invoke state
+    }// END onChangeRecipeInstructions
+
     onChangeRecipeImage(e){
         this.setState({rImage: e.target.value}); //update method and invoke state
     }// END onChangeRecipeImage
 
     onSubmit(){ // event occurs when a form is submitted
         alert('Recipe added' // alert pops up with Recipe rName, rIngredients and rImage
-        + '\nrName:  ' + this.state.rName
-        + '\nrIngredients: ' + this.state.rIngredients 
-        + '\nrImage: ' + this.state.rImage);
+        + '\nName:  ' + this.state.rName
+        + '\nIngredients: ' + this.state.rIngredients 
+        + '\nInstrcutions: ' + this.state.rInstructions
+        + '\nImage: ' + this.state.rImage);
 
         const newRecipe = { // newRecipe object
             rName: this.state.rName,
             rIngredients: this.state.rIngredients,
+            rInstructions: this.state.rInstructions,
             rImage: this.state.rImage
         }
 
@@ -65,7 +73,12 @@ export class Create extends React.Component{
 
                     <div className="form-group">
                         <label>Please add recipe ingredients</label>
-                        <input type="text" className="form-control" value={this.state.rIngredients} onChange={this.onChangeRecipeIngredients}></input>
+                        <textarea  type="text" className="form-control" rows="3" value={this.state.rIngredients} onChange={this.onChangeRecipeIngredients}></textarea >
+                    </div> {/* value attribute of a text field */}
+
+                    <div className="form-group">
+                        <label>Please add recipe instructions</label>
+                        <textarea  type="text" className="form-control" rows="3" value={this.state.rInstructions} onChange={this.onChangeRecipeInstructions}></textarea >
                     </div> {/* value attribute of a text field */}
                 
                     <div className="form-group">

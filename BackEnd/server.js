@@ -23,13 +23,14 @@ app.use(bodyParser.json())
 
 // connect to MongoDB database
 const strMongoDB = 'mongodb+srv://admin:admin@cluster0.eozna.mongodb.net/myrecipes?retryWrites=true&w=majority'; //connect to cluster MongoDB
-mongoose.connect(strMongoDB, { useNewUrlParser: true }); // connect to database
+mongoose.connect(strMongoDB, { useNewUrlParser: false }); // connect to database
 
 const Schema = mongoose.Schema; // schema
 
 const recipeSchema = new Schema({  // type of schema
     rName: String,
     rIngredients: String,
+    rInstructions: String,
     rImage: String
 }) // what doscuments in database will look like
 
@@ -74,6 +75,7 @@ app.post('/api/recipes', (req, res) => { // POST method
     recipeModel.create({ // create new record in database
         rName: req.body.rName,
         rIngredients: req.body.rIngredients,
+        rInstructions: req.body.rInstructions,
         rImage: req.body.rImage
     })
     .then(() => {
