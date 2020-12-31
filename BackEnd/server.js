@@ -16,14 +16,14 @@ app.use(function (req, res, next) {
 });
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse application/json
 app.use(bodyParser.json())
 
 // connect to MongoDB database
 const strMongoDB = 'mongodb+srv://admin:admin@cluster0.eozna.mongodb.net/myrecipes?retryWrites=true&w=majority'; //connect to cluster MongoDB
-mongoose.connect(strMongoDB, { useNewUrlParser: false }); // connect to database
+mongoose.connect(strMongoDB, { useNewUrlParser: true }); // connect to database
 
 const Schema = mongoose.Schema; // schema
 

@@ -3,7 +3,7 @@ import { Recipes } from './recipes';
 import '../App.css';
 import axios from 'axios';
 
-export class Read extends React.Component {
+export class Display extends React.Component {
 
     constructor() {
         super();
@@ -46,7 +46,7 @@ export class Read extends React.Component {
     render() {
         return (
             <div>
-                <h3>Hello from Read Component</h3>
+                <h3>Recipes</h3>
                 <Recipes recipes={this.state.recipes} ReloadData={this.ReloadData}></Recipes> {/* passing object recipes. // also passing method ReloadData down*/} 
             </div>
         );

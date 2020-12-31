@@ -1,8 +1,10 @@
 import React from 'react';
 import '../App.css';
 import axios from 'axios'; // utils/API.js - axios config
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 
-export class Create extends React.Component{
+export class Add extends React.Component{
 
     constructor(){
         super();
@@ -63,7 +65,7 @@ export class Create extends React.Component{
     render(){ // method of react - tells react what to display
         return( //output of the method
             <div>
-                <h3>Hello from create component</h3> 
+                <h3>Add a recipe</h3> 
                 <form onSubmit={this.onSubmit}> {/* form used to collect user input*/}
                 
                     <div className="form-group">
@@ -86,9 +88,9 @@ export class Create extends React.Component{
                         <input type="text" className="form-control" value={this.state.rImage} onChange={this.onChangeRecipeImage}></input>
                     </div> {/* onchange event occurs when the value of an element has been changed */}
 
-                    <input type="submit" value="Add Recipe"></input>
+                    <Button variant="outline-info" type="submit">Add Recipe</Button>
                 </form>
             </div>
         );// END return
     }// END render
-}// END create class
+}// END Add class
