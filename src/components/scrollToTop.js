@@ -8,12 +8,11 @@ export default class ScrollToTop extends Component {
         top: 0, // back to top of the page, 0px
         behavior: "smooth" // smooth effect
       });
-  }
+  } // END scrollToTop
 
-render() {
+  render() {
     return ( // button on click activates the scrollToTop method, returning user to top of page
         <Button variant="info" onClick={() => this.scrollToTop()}>Scroll to top</Button> 
     );
-  }
-
-}
+  } // END render
+} // END class ScrollToTop

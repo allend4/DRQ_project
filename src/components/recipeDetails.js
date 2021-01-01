@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button' // import button from bootstrap 
 import axios from 'axios' // http client
 import {Link} from 'react-router-dom' // create a link between pages
-import ScrollToTop from './scrollToTop';
+import ScrollToTop from './scrollToTop'; // import scrollToTop method
 
 export class RecipeDetails extends React.Component {
 
@@ -21,7 +21,7 @@ export class RecipeDetails extends React.Component {
             .catch((err) => {
                 console.log(err);
             });
-    }
+    } // END DeleteRecipe
 
     render() {
         return (

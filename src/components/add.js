@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import axios from 'axios'; // utils/API.js - axios config
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap'; // import button from bootstrap
 
 export class Add extends React.Component{
 
@@ -66,28 +66,23 @@ export class Add extends React.Component{
         return( //output of the method
             <div>
                 <h3>Add a recipe</h3> 
-                <form onSubmit={this.onSubmit}> {/* form used to collect user input*/}
-                
+                <form onSubmit={this.onSubmit}> {/* form used to collect user input*/}   
                     <div className="form-group">
                         <label>Please name recipe</label>
                         <input type="text" className="form-control" value={this.state.rName} onChange={this.onChangeRecipeName}></input> 
                     </div> {/* form-control - Bootstrap’s form styles */}
-
                     <div className="form-group">
                         <label>Please add recipe ingredients</label>
                         <textarea  type="text" className="form-control" rows="3" value={this.state.rIngredients} onChange={this.onChangeRecipeIngredients}></textarea >
                     </div> {/* value attribute of a text field */}
-
                     <div className="form-group">
                         <label>Please add recipe instructions</label>
                         <textarea  type="text" className="form-control" rows="3" value={this.state.rInstructions} onChange={this.onChangeRecipeInstructions}></textarea >
-                    </div> {/* value attribute of a text field */}
-                
+                    </div> {/* value attribute of a text field */}   
                     <div className="form-group">
                         <label>Please add recipe picture</label>
                         <input type="text" className="form-control" value={this.state.rImage} onChange={this.onChangeRecipeImage}></input>
                     </div> {/* onchange event occurs when the value of an element has been changed */}
-
                     <Button variant="outline-info" type="submit">Add Recipe</Button>
                 </form>
             </div>
