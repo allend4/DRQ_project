@@ -12,7 +12,6 @@ export class Content extends React.Component {
                     Allowing you access to various recipes, edit them and even add your own.
                 </p>
                 <img src={logo} alt="logo"/>
-                <h2>It is {new Date().toLocaleTimeString()}.</h2> {/* Method returns date */}
             </div>
         );// END return
     }// END render
