@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button' // import button from bootstrap 
 import axios from 'axios' // http client
 import {Link} from 'react-router-dom' // create a link between pages
+import ScrollToTop from './scrollToTop';
 
 export class RecipeDetails extends React.Component {
 
@@ -38,11 +39,12 @@ export class RecipeDetails extends React.Component {
                                 <li className="list-group-item">{this.props.recipe.rInstructions}</li>
                             </ul>
                         </blockquote>
-                        <Button variant="danger" onClick={this.DeleteRecipe}>Delete</Button> 
-                        <Link to={"/edit/" + this.props.recipe._id} className="btn btn-primary" > Edit </Link> 
+                        <Button variant="danger" onClick={this.DeleteRecipe}>Delete</Button> &nbsp; 
+                        <Link to={"/edit/" + this.props.recipe._id} className="btn btn-warning" > Edit </Link> &nbsp;
+                        <ScrollToTop></ScrollToTop>
                     </Card.Body> {/* Button / Link moved inside card to stop buttons expanding the screen*/}
                 </Card>
-
+                
             </div>
         );// END return
     }// END render
