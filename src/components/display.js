@@ -8,7 +8,7 @@ export class Display extends React.Component {
     constructor() {
         super();
         this.ReloadData = this.ReloadData.bind(this); // bind
-    } // can only pass data from parenbt to child - need to pass further grandparent to child
+    } // can only pass data from parent to child - need to pass further grandparent to child
 
     // object state stores data
     state = {
@@ -47,7 +47,7 @@ export class Display extends React.Component {
         return (
             <div>
                 <h3>Recipes</h3>
-                <Recipes recipes={this.state.recipes} ReloadData={this.ReloadData}></Recipes> {/* passing object recipes. // also passing method ReloadData down*/} 
+                <Recipes recipes={this.state.recipes} ReloadData={this.ReloadData}></Recipes> {/* passing object recipes. // also passing method ReloadData down*/}
             </div>
         );
     }

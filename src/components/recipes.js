@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { RecipeDetails } from './recipeDetails';
+import { RecipeDetails } from './recipeDetails'; // calls RecipeDetails
 
 export class Recipes extends React.Component {
 

@@ -36,14 +36,14 @@ const recipeSchema = new Schema({  // type of schema
 
 const recipeModel = mongoose.model("recipe", recipeSchema); // data model schemanode
 
-app.get('/api/recipes', (req, res) => { // GET method
+app.get('/api/recipes', (req, res) => { // GET method - gets all recipes
 
     recipeModel.find((err, data) => {
         res.json(data);
     })
 })
 
-app.get('/api/recipes/:id', (req, res) => {
+app.get('/api/recipes/:id', (req, res) => { // gets recipe by id
     console.log(req.params.id); // log id to console
 
     recipeModel.findById(req.params.id, (err, data) => {  // take id and search database
@@ -59,7 +59,7 @@ app.put('/api/recipes/:id', (req, res) => {
     })
 })
 
-app.delete('/api/recipes/:id', (req, res) => {
+app.delete('/api/recipes/:id', (req, res) => { // delete recipe
     console.log(req.params.id); // log id
 
     recipeModel.findByIdAndDelete({ _id: req.params.id }, (err, data) => {

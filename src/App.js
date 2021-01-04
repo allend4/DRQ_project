@@ -15,7 +15,6 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-
           <Navbar bg="dark" variant="dark">
             <Navbar.Brand href="/"><img src={logo2} alt="logo" height="50" width="50" /> Recipez</Navbar.Brand>
             <Nav className="mr-auto">
@@ -28,14 +27,12 @@ class App extends React.Component {
               <Button variant="outline-info">Search</Button>
             </Form>
           </Navbar>
-
           <Switch>
             <Route path='/' component={Content} exact></Route>
             <Route path='/add' component={Add} ></Route>
             <Route path='/display' component={Display} ></Route>
             <Route path='/edit/:id' component={Edit}></Route>
           </Switch>
-
         </div>
       </Router>
     ); // END return
