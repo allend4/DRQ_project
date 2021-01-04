@@ -7,7 +7,7 @@ import logo2 from './images/plainLogo.png'; // Recipez logo
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'; // import from bootstrap
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Edit } from './components/edit'; // calls edit
+import { Edit } from './components/edit'; // calls edit 
 
 class App extends React.Component {
 
