@@ -23,9 +23,9 @@ class App extends React.Component {
               <Nav.Link href="/add">Add recipe</Nav.Link>
             </Nav>
             <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <FormControl type="text" placeholder="Search (Not Working!)" className="mr-sm-2" />
               <Button variant="outline-info">Search</Button>
-            </Form>
+            </Form> 
           </Navbar>
           <Switch>
             <Route path='/' component={Content} exact></Route>
@@ -38,5 +38,6 @@ class App extends React.Component {
     ); // END return
   } // END rendor
 } // END App
+
 
 export default App;
